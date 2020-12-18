@@ -2,12 +2,12 @@
 const { test, beforeEach, afterEach, expect } = require('@jest/globals');
 const productRepo = require('../data-access-layer/product-repo');
 
-beforeEach(()=> {
-    productRepo.deleteAll();
+beforeEach(async ()=> {
+    await productRepo.deleteAll();
 });
 
-afterEach(() => {
-    productRepo.deleteAll();
+afterEach(async () => {
+    await productRepo.deleteAll();
 });
 
 test('get all messages when the database is empty', async () => {
