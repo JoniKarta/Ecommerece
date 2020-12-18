@@ -7,13 +7,9 @@ const router = express.Router();
 
 const bodyParser = require('body-parser');
 
-router.get("/", (req, res) => {
-    res.sendFile(app.path + '/index.html');
-});
 
 router.post("/", (req, res)=> {
-    console.log(req.body.email, req.body.password, req.body.confirm);
-    res.status(200).send("User registered successfully");
+    res.status(200).send("Product saved to the system");
 })
 
 // const bodyParser = () => {

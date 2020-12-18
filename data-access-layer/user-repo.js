@@ -1,5 +1,4 @@
 const fs = require('fs');
-const crypto = require('crypto');
 
 class UserRepository {
 
@@ -20,7 +19,19 @@ class UserRepository {
     }
 
     async findOneByFilter(filters){
-      
+        const users = await this.findAll();
+        let found = true;
+        for(const user of users){
+            found = true;   
+            for(const key in filters){
+                if(user[key] !== filters[key]){
+                    found = false;
+                }  
+            }
+            if(found){
+                return user;
+            }
+        }
     }
     
     async findById(email){

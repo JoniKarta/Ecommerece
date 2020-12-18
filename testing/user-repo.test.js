@@ -72,4 +72,10 @@ test('update user password', async ()=> {
     const userFromDb =  await userRepository.findById(user1.email);
 
     expect(userFromDb).toEqual(updateUser);
-})
+});
+
+
+
+test('search user by filter', ()=> {
+    // TODO: complete testing by filter
+});

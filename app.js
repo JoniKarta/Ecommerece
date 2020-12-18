@@ -2,14 +2,13 @@
 const express = require("express");
 
 const server = express();
-const prooductRepo = require("./data-access-layer/product-repo");
-
 const productController = require("./controllers/product-controller.js");
-
+const userController = require('./controllers/user-controller')
 const bodyParser = require('body-parser');
 
 server.use(bodyParser.urlencoded({extended: true}));
 
+server.use("/api/users", userController);
 server.use("/api/products", productController);
 
 server.use("*", (request, response)=> {
