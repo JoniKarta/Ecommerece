@@ -1,10 +1,14 @@
 [
   {
-    "email": "",
-    "password": "d6dfd6429c6694d67a6e1470bc7404aabd7ad6bd174be0f61361015a8f6703da1ab1707ea40713510e1ffea36f8bb4b3d93be75a02ccb17395e703f1de2283ca.b64de4c51fa11e7c"
+    "email": "jon@gmail.com",
+    "password": "ed7f0bee30e7cf9f4e8073d074bfd696dfc2506fee67feaf50cf797e54ba6ab7ebe50b9799e456efb7d7a00c1dca29e79fbf6a9ec9d8ef8061a0ef41f3faee31.9d2b225d86040932"
   },
   {
-    "email": "Jonathan@gmail.com",
-    "password": "b688d2d4140377993efcd817fe7f0adfa0ebf96a836f55435fb8f2b37b56e8569c79aead3b7581ef04c539f96b252e2590d4d22b1478fe0dd2ebbfbc55779333.32682475c304e601"
+    "email": "jo@gmail.com",
+    "password": "d6c33678822be24af8d8c9e79420a481f7f21bd6935ffe15ea7af284da8585fe4620c243307c4d6fa1f6f7c2273612a84cc9243223360e5917a569cecca7ce94.eee3bf7c0a05a321"
+  },
+  {
+    "email": "nono@gmail.com",
+    "password": "296966816b95fa312c427651c009ee2cd7c620a178e61b9e0634a4561e01a48c269c1d21e45b225b27c7849189209f5ba620b4537d1002d8da380edc124c65dd.4cfca18f066f20bf"
   }
 ]
