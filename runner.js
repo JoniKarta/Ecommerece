@@ -26,5 +26,3 @@ console.log(animals); // return the array without the element listed above
 
 
 const obj = { email: 'Jonathan@gmail.com', password: '123456', confirm: '123456' };
-
-const {email, password, confirm , status} = obj;
