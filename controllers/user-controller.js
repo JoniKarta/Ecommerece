@@ -5,9 +5,11 @@ const router = express.Router();
 const app = require('../app');
 const userService = require('../logic/user-service');
 const User = require('../model/user');
+const signInTemplate = require("../views/admin/signin");
+const signUpTemplate = require("../views/admin/signup");
 
 router.get("/signup", async (req, res)=> {
-    res.sendFile(app.path + '/views/index.html');
+    res.send(signUpTemplate({req}));
 });
 
 router.post("/signup", async (req, res)=> {
@@ -28,15 +30,7 @@ router.post("/signup", async (req, res)=> {
 
 router.get("/signin", (req, res)=> {
     try{
-        res.send(`
-        <div> 
-        <form method="POST">
-        <input type="text" placeholder="email" name="email">
-        <input type="password" placeholder="password" name="password">
-        <button> Sign In </button>
-        </form>
-        </div>
-        `)
+        res.send(signInTemplate({req}));
     }catch(err){
         res.status(500).send(err.message);
     }
