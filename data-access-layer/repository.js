@@ -1,13 +1,9 @@
-const { dir } = require('console');
 const fs = require('fs');
 
 module.exports = class Repository {
 
     constructor(fileName){
-
-        if(!fileName){
-            throw new Error('you must provide a filename');
-        }
+        if(!fileName) throw new Error('you must provide a filename');
         this.fileName = fileName;
         try{
             fs.accessSync(this.fileName);
@@ -18,13 +14,11 @@ module.exports = class Repository {
 
     async findAll() {
         return JSON.parse(await fs.promises.readFile(this.fileName, {encoding: 'utf8'}));
-
     }
 
     async findById(field, id){
         const elements = await this.findAll();
-        const element = elements.filter(e => e[field] === id); 
-        return element.pop();
+        return elements.filter(e => e[field] === id).pop();
     }
 
     async findByFilter(filters){
@@ -41,6 +35,7 @@ module.exports = class Repository {
             }
         }
     }
+
     async save(element){
         let elements = await this.findAll();
         elements.push(element);
@@ -63,9 +58,7 @@ module.exports = class Repository {
             if(dirty){
                 await fs.promises.writeFile(this.fileName, JSON.stringify(elements, null, 2));
             }
-        }
-        
-         
+        } 
     }
     
     async deleteById(field, id){
@@ -77,7 +70,5 @@ module.exports = class Repository {
     async deleteAll() {
          await fs.promises.writeFile(this.fileName, '[]');
     }
-    
-
 }
 

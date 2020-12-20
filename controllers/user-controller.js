@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const userService = require('../logic/user-service');
 const User = require('../model/user');
-const signInTemplate = require("../views/admin/signin");
-const signUpTemplate = require("../views/admin/signup");
+const signInTemplate = require("../views/admin/auth/signin");
+const signUpTemplate = require("../views/admin/auth/signup");
 const httpCodes = require("../utils/http-codes");
 const {validationResult } = require("express-validator");
 

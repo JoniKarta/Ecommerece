@@ -1,6 +1,6 @@
 
 
-const layout = require("../auth-layout");
+const layout = require("../../auth-layout");
 const checkErrors = (errors, prop)=> {
 
     try{

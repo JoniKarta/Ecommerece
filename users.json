@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "email": "test@test.com",
+    "password": "3569bdb00b4d13909df0802a0939493da70467a60dee33a95127c8f1c2cb28dccbf14108cd63636648aba488318434e4c8ff9f56425044c629cff6cd092b907d.d5a08bd08293dd07"
+  },
+  {
+    "email": "Jonathan@gmail.com",
+    "password": "b28d733e0739dc8eed62059e224fa880a656b41bdf6e4a5c6dff83fe895032be188483b3940a58f9f9cd6142290857b9baa0b43069771618912b43e0f2883678.462b5c8112f8cdc9"
+  }
+]

@@ -17,7 +17,7 @@ server.use(cookieSession({
 
 server.use("/api/users", userController);
 
-//server.use("/api/products", productController);
+server.use("/api/products", productController);
 
 server.use("*", (request, response)=> {
     response.status(404).send("The route: " + request.route + " dosen't exists");

@@ -4,9 +4,13 @@ const util = require('util');
 const userRepo = require('../data-access-layer/user-repo');
 const scrypt = util.promisify(crypto.scrypt);
 
+const userSchema = {
+    email: 'email',
+    password: 'password'
+}
 
 async function createUser(user){
-    const checkUser = await dao.findById(user.email);
+    const checkUser = await dao.findById(userSchema.email, user.email);
     if(checkUser) return null;
     const sult = crypto.randomBytes(8).toString('hex');
     const hashed = await scrypt(user.password, sult, 64);
@@ -15,7 +19,7 @@ async function createUser(user){
 }
 
 async function getSpecificUser(email){
-    const user = await userRepo.findById(email);
+    const user = await userRepo.findById(userSchema.email, email);
     return user;
 }
 
