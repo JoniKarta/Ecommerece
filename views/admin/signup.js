@@ -11,15 +11,18 @@ const checkErrors = (errors, prop)=> {
 }
 module.exports = ({req, errors}) => {
     return layout({content: `
-        <div>
-            ${req.session.id} 
+        <div class="signup-container">
             <form method="POST"> 
-                <input type="text" placeholder="email" name="email">
+                <h1> Sign Up </h1>
+                <label> Email </label><br>
+                <input name="email" type="text" placeholder="email" ><br>
                 ${checkErrors(errors, 'email')}
-                <input type="password" placeholder="password" name="password">
+                <label> Password </label><br>
+                <input name="password" type="password" placeholder="password"><br>
                 ${checkErrors(errors, 'password')}
-                <input type="password" placeholder="confirm password" name="confirm">
-                ${checkErrors(errors, 'confirm')}
+                <label> Confirm Password </label><br>
+                <input name="confirmPassword" type="password" placeholder="confirm password" ><br>
+                ${checkErrors(errors, 'confirmPassword')}
                 <button> Sign Up </button>
             </form>
         </div>

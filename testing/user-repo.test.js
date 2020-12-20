@@ -2,7 +2,7 @@
 const { test, beforeEach, afterEach, expect } = require('@jest/globals');
 const User = require('../model/user');
 
-const userRepository = require('../data-access-layer/user-repo');
+const userRepository = require('../data-access-layer/user-repo.js');
 
 beforeEach(async ()=> {
     await userRepository.deleteAll();
@@ -49,7 +49,7 @@ test('delete the first inserted user from database with specific id',async () =>
     // extract the id from the user
     const firstUser = users.slice(0, 1).shift();
     // delete by the given id
-    await userRepository.deleteById(firstUser.email);
+    await userRepository.deleteById('email', firstUser.email);
     
     // get all users using find all 
     users = await userRepository.findAll();
@@ -66,10 +66,10 @@ test('update user password', async ()=> {
 
     // Update the user
     const updateUser = {email: 'Jonathan@gmail.com', password: '11111'};
-    await userRepository.update(updateUser.email, updateUser);
+    await userRepository.update('email', updateUser.email, updateUser);
 
     // get the updated user
-    const userFromDb =  await userRepository.findById(user1.email);
+    const userFromDb =  await userRepository.findById('email', user1.email);
 
     expect(userFromDb).toEqual(updateUser);
 });
